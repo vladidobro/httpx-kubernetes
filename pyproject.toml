@@ -1,11 +1,14 @@
 [tool.poetry]
 name = "httpx-kubernetes"
-version = "0.1.1"
+version = "0.1.2"
 description = "Httpx transport that port-forwards into Kubernetes cluster"
 authors = [ "Vladislav Wohlrath <vladislav@wohlrath.cz>" ]
 license = "Apache-2.0"
 readme = "README.md"
 packages = [ { include = "httpx_kubernetes" } ]
+
+[project.urls]
+repository = "https://github.com/vladidobro/httpx-kubernetes"
 
 [tool.poetry.dependencies]
 python = ">=3.9"

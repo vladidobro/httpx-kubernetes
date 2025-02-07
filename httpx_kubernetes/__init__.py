@@ -9,6 +9,12 @@ from httpx import AsyncHTTPTransport, Request, Response
 
 from httpcore._backends.anyio import AnyIOStream
 
+__all__ = [
+    'KubernetesPortForwardStream',
+    'KubernetesPortForwardNetworkBackend',
+    'KubernetesPortForwardTransport',
+]
+
 class KubernetesPortForwardStream(anyio.abc.SocketStream):
     def __init__(self, portforward, port) -> None:
         self._portforward = portforward
@@ -62,7 +68,7 @@ class KubernetesPortForwardNetworkBackend(AsyncNetworkBackend):
         return AnyIOStream(stream=KubernetesPortForwardStream(pf, port))
 
 
-class KubernetesTransport(AsyncHTTPTransport):
+class KubernetesPortForwardTransport(AsyncHTTPTransport):
     def __init__(
             self, 
             *,
