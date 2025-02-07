@@ -9,7 +9,7 @@ Example:
 import httpx
 from httpx_kubernetes import KubernetesPortForwardTransport
 
-mounts = {'kube://': KubernetesPortForwardTransport(context='mycontext')
+mounts = {'kube://': KubernetesPortForwardTransport(context='mycontext')}
 # alternatively, create the CoreV1Api and pass it as 'api' keyword argument
 
 async with httpx.AsyncClient(mounts=mounts) as c:
